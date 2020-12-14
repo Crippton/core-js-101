@@ -18,8 +18,8 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  return value1 + value2;
 }
 
 
@@ -34,8 +34,8 @@ function concatenateStrings(/* value1, value2 */) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  return value.length;
 }
 
 /**
@@ -51,8 +51,8 @@ function getStringLength(/* value */) {
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -65,8 +65,10 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  const tep = value.split(',').slice(1).join().split(' ');
+  return `${tep[1]} ${tep[2].split('!').slice(0).join().split(',')
+    .slice(0)}`;
 }
 
 
@@ -80,8 +82,8 @@ function extractNameFromTemplate(/* value */) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  return value[0];
 }
 
 /**
@@ -110,8 +112,14 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+function repeatString(value, count) {
+  let temp;
+  let temp2 = count;
+  if (temp2) {
+    temp += value;
+    temp2 -= 1;
+  }
+  return temp;
 }
 
 /**
